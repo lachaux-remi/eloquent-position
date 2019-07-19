@@ -1,0 +1,57 @@
+{
+    "name": "lachaux-remi/eloquent-position",
+    "description": "Position logic for Eloquent models with minimum setup.",
+    "keywords": [
+        "eloquent-position",
+        "eloquent",
+        "position",
+        "laravel",
+        "lumen",
+        "position"
+    ],
+    "homepage": "https://github.com/LachauxRemi/eloquent-position",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lachaux Rémi",
+            "email": "contact@remi-lachaux.fr"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/database": "~5.8.0",
+        "illuminate/support": "~5.8.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.2",
+        "orchestra/database": "3.8.x-dev",
+        "orchestra/testbench": "v3.8.0",
+        "phpunit/phpunit": "~7.0",
+        "limedeck/phpunit-detailed-printer": "^4.1",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "LachauxRemi\\EloquentPosition\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LachauxRemi\\EloquentPosition\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "phpcs --standard=PSR2 src/",
+        "lint-fix": "phpcbf --standard=PSR2 src/"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LachauxRemi\\EloquentPosition\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
