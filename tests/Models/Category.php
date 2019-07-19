@@ -8,9 +8,9 @@ use LachauxRemi\EloquentPosition\Traits\Position;
  * Class Category
  *
  * @property-read int $id
- * @property ?int $parent_id
- * @property ?int $dummy
- * @property ?int $position
+ * @property $parent_id
+ * @property $dummy
+ * @property $position
  *
  * @package LachauxRemi\EloquentPosition\Tests\Models
  */

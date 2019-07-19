@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * Class CategoryWithParent
  *
- * @property int $parent_id
+ * @property $parent_id
  *
  * @package LachauxRemi\EloquentPosition\Tests\Models
  */
