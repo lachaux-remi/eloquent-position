@@ -5,8 +5,8 @@ namespace LachauxRemi\EloquentPosition\Tests\Models;
 /**
  * Class CategoryCustomPositionKey
  *
- * @property int $dummy
- * @property ?int $position
+ * @property $dummy
+ * @property $position
  *
  * @package LachauxRemi\EloquentPosition\Tests\Models
  */

@@ -52,13 +52,13 @@ class MoveQuery extends AbstractPositionQuery
         $lastPosition = $query->max($this->positionColumn) ?: 0;
 
         $group = $this->getPositionGroup();
-        if ($group !== null && $this->getModel()->getOriginal($group) !== $this->getModel()->{$group}) {
+        if ($group !== null && $this->getModel()->getOriginal($group) != $this->getModel()->{$group}) {
             $this->getModel()->newPositionQuery()
                 ->where($group, $this->getModel()->getOriginal($group))
                 ->where($this->positionColumn, '>', $this->getOriginalPosition())
                 ->decrement($this->positionColumn);
 
-            if ($this->getPosition() >= $lastPosition) {
+            if ($this->getPosition() > $lastPosition) {
                 $this->getModel()->setPosition($lastPosition + 1);
             } else {
                 $this->getModel()->setPosition($this->getPosition());

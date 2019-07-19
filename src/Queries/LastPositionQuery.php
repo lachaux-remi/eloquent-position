@@ -33,7 +33,7 @@ class LastPositionQuery extends AbstractPositionQuery
             $this->getModel()->setPosition($lastPosition + 1);
         } else {
             $group = $this->getPositionGroup();
-            if ($group !== null && $this->getModel()->getOriginal($group) !== $this->getModel()->{$group}) {
+            if ($group !== null && $this->getModel()->getOriginal($group) != $this->getModel()->{$group}) {
                 $this->getModel()->newPositionQuery()
                     ->where($group, $this->getModel()->getOriginal($group))
                     ->where($this->positionColumn, '>', $this->getOriginalPosition())
