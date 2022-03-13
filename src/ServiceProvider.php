@@ -1,9 +1,9 @@
 <?php
 
-namespace LachauxRemi\EloquentPosition;
+namespace EloquentPosition;
 
+use EloquentPosition\Commands\RecalculatePositionCommand;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use LachauxRemi\EloquentPosition\Commands\RecalculatePositionCommand;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -14,10 +14,10 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function boot(): void
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                RecalculatePositionCommand::class
-            ]);
+        if ( $this->app->runningInConsole() ) {
+            $this->commands( [
+                RecalculatePositionCommand::class,
+            ] );
         }
     }
 }

@@ -1,7 +1,5 @@
-/.git/
-/.idea/
-/build/
-/public/
-/vendor/
+bin
+build
+vendor
+.phpunit.result.cache
 composer.lock
-composer.phar

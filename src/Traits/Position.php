@@ -1,21 +1,18 @@
 <?php
 
-namespace LachauxRemi\EloquentPosition\Traits;
+namespace EloquentPosition\Traits;
 
+use EloquentPosition\Observers\PositionObserver;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use LachauxRemi\EloquentPosition\Observers\PositionObserver;
 
 /**
  * Trait Position
  *
- * @property string       positionColumn        to enable overriding for the position column
- * @property string|null  positionGroup         builds a filter from columns for position calculation. Supports single
- *                                              column or multiple columns
- * @method static void observe($className)
+ * @property string positionColumn to enable overriding for the position column
+ * @property string|null positionGroup builds a filter from columns for position calculation. Supports single column or multiple columns
+ * @method static void observe( string $className )
  * @method Builder newQuery()
- *
- * @package LachauxRemi\EloquentPosition\Traits
  */
 trait Position
 {
@@ -24,19 +21,16 @@ trait Position
     /**
      * Hook into the Eloquent model events to create or
      * update position as required.
-     *
-     * @return void
      */
     public static function bootPosition(): void
     {
-        static::observe(PositionObserver::class);
+        static::observe( PositionObserver::class );
     }
 
     /**
      * Builds the position query. Uses `newQuery` method.
      *
      * @uses Model::newQuery()
-     * @return Builder
      */
     public function newPositionQuery(): Builder
     {

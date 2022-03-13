@@ -1,57 +1,58 @@
 {
-    "name": "lachaux-remi/eloquent-position",
-    "description": "Position logic for Eloquent models with minimum setup.",
-    "keywords": [
-        "eloquent-position",
-        "eloquent",
-        "position",
-        "laravel",
-        "lumen",
-        "position"
-    ],
-    "homepage": "https://github.com/LachauxRemi/eloquent-position",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Lachaux Rémi",
-            "email": "contact@remi-lachaux.fr"
-        }
-    ],
-    "require": {
-        "php": "^7.1",
-        "illuminate/database": "~5.8.0",
-        "illuminate/support": "~5.8.0"
-    },
-    "require-dev": {
-        "mockery/mockery": "^1.2",
-        "orchestra/database": "3.8.x-dev",
-        "orchestra/testbench": "v3.8.0",
-        "phpunit/phpunit": "~7.0",
-        "limedeck/phpunit-detailed-printer": "^4.1",
-        "squizlabs/php_codesniffer": "2.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "LachauxRemi\\EloquentPosition\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "LachauxRemi\\EloquentPosition\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "lint": "phpcs --standard=PSR2 src/",
-        "lint-fix": "phpcbf --standard=PSR2 src/"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "LachauxRemi\\EloquentPosition\\ServiceProvider"
-            ]
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "lachaux-remi/eloquent-position",
+  "type": "library",
+  "description": "Position logic for Eloquent models with minimum setup.",
+  "keywords": [
+    "Laravel",
+    "Eloquent",
+    "Position"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lachaux-remi/eloquent-position",
+  "authors": [
+    {
+      "name": "Lachaux Rémi",
+      "email": "contact@remi-lachaux.fr",
+      "role": "Project Founder"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.0",
+    "laravel/framework": ">=v8.0.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "1.5.0",
+    "orchestra/database": ">=v3.8.0",
+    "orchestra/testbench": ">=v6.0.0",
+    "phpunit/phpunit": ">=9.0.0",
+    "limedeck/phpunit-detailed-printer": "6.0.0",
+    "squizlabs/php_codesniffer": ">=3.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "EloquentPosition\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "EloquentPosition\\Test\\": "test"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "lint": "phpcs --standard=PSR2 src/",
+    "lint-fix": "phpcbf --standard=PSR2 src/"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "EloquentPosition\\ServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
